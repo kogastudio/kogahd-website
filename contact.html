@@ -26,6 +26,7 @@
 <span style="font-family: 'Cormorant Garamond', serif; font-size: 11px; letter-spacing: 0.5em">HOLDINGS</span>
 </span>
 </a>
+<button class="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
 <nav class="site-nav" aria-label="メインメニュー" style="display: flex; flex-wrap: wrap; align-items: center; gap: 4px 36px; font-size: 14px; font-weight: 500; letter-spacing: 0.08em">
 <a href="company.html" style="padding: 10px 0">企業情報</a>
 <a href="business.html" style="padding: 10px 0">事業紹介</a>
@@ -108,5 +109,6 @@
 </div>
 </footer>
 </div>
+<script>(function(){var b=document.querySelector(".nav-toggle"),h=document.querySelector("header");if(!b||!h)return;b.addEventListener("click",function(){var o=h.classList.toggle("open");b.setAttribute("aria-expanded",o?"true":"false");b.setAttribute("aria-label",o?"メニューを閉じる":"メニューを開く")})})();</script>
 </body>
 </html>
