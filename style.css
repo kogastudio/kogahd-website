@@ -20,6 +20,13 @@ header.open .nav-toggle span:nth-child(3){transform:translateY(-7.5px) rotate(-4
   header.open .site-nav a{padding:16px 0!important;border-bottom:1px solid #EEF0F2;text-align:left}
   header.open .site-nav a:last-child{margin-top:16px;text-align:center;border:0}
   .topbar{display:none!important}
+  .kpi{grid-template-columns:repeat(2,1fr)!important}
+  .kpi>div{padding:18px 12px 18px 0!important;border-right:0!important;border-bottom:1px solid #EEF0F2}
+  .kpi>div:nth-child(even){padding-left:16px!important;border-left:1px solid #DDE0E3}
+  .kpi>div>span:nth-child(2){font-size:30px!important}
+  .kpi>div>span:nth-child(2) span{font-size:12px!important}
+  .kpi>div:last-child{grid-column:1/-1;border-left:0!important;border-bottom:0}
+  .kpi>div:last-child>span:nth-child(2){font-size:17px!important;line-height:1.6!important}
   .ceo-col{flex-basis:200px!important;max-width:200px!important}
   .gal-item{flex-basis:132px!important}
   section,header>div{padding-left:20px!important;padding-right:20px!important}
