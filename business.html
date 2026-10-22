@@ -58,55 +58,37 @@
 <p style="margin: 0; max-width: 500px; font-size: 14px; color: #3D4752">不動産のバリューチェーンに一貫して関わることで、開発の品質と竣工後の運営に責任を持ち、長期にわたって資産価値を高めます。</p>
 </div>
 
-<style>
-.vc2{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:0 12px;padding-top:8px}
-.vc2::before{content:"";position:absolute;left:8.3%;right:8.3%;top:44px;height:1px;background:#14202B;opacity:.35}
-.vc2::after{content:"";position:absolute;right:calc(8.3% - 5px);top:40px;width:9px;height:9px;border-top:1px solid #14202B;border-right:1px solid #14202B;transform:rotate(45deg);opacity:.6}
-.vc-step{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;min-width:0}
-.vc-node{position:relative;width:72px;height:72px;border-radius:50%;background:#FFFFFF;border:1px solid #14202B;display:grid;place-items:center;z-index:1}
-.vc-node svg{width:34px;height:34px}
-.vc-no{position:absolute;top:-6px;right:-6px;width:26px;height:26px;border-radius:50%;background:#7A5B38;color:#FFFFFF;font-family:'Cormorant Garamond',serif;font-size:13px;display:grid;place-items:center;letter-spacing:.02em}
-.vc-t{font-weight:700;font-size:15px;margin-top:6px}
-.vc-d{font-size:12.5px;color:#3D4752;line-height:1.7}
-@media (max-width:900px){
-.vc2{grid-template-columns:1fr;gap:0;padding:0 0 0 8px}
-.vc2::before{left:43px;right:auto;top:50px;bottom:50px;width:1px;height:auto}
-.vc2::after{display:none}
-.vc-step{flex-direction:row;text-align:left;align-items:flex-start;gap:0 20px;padding:14px 0;display:grid;grid-template-columns:72px 1fr;grid-template-rows:auto auto}
-.vc-node{grid-row:1/3}
-.vc-t{margin-top:14px}
-}
-</style>
-<div class="vc2">
-<div class="vc-step">
-<div class="vc-node"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="#14202B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28s-9-8.2-9-15a9 9 0 0 1 18 0c0 6.8-9 15-9 15Z"/><circle cx="16" cy="13" r="3.2"/></svg><span class="vc-no">01</span></div>
-<span class="vc-t">用地情報・選定</span>
-<span class="vc-d">不動産会社からの情報をもとに、駅徒歩圏で賃貸需要の厚い用地を選定</span>
+<style>.vc{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:2px;background:#DDE0E3;border:1px solid #DDE0E3}.vc>div{position:relative}@media (min-width:1040px){.vc>div:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:16px;height:16px;margin-top:-8px;background:#F5F6F7;border-top:1px solid #7A5B38;border-right:1px solid #7A5B38;transform:rotate(45deg);z-index:1}}</style>
+<div class="vc">
+<div style="background: #F5F6F7; padding: 28px 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #7A5B38">01</span>
+<span style="font-weight: 700; font-size: 15px">用地情報・選定</span>
+<span style="font-size: 13px; color: #3D4752">不動産会社からの情報をもとに、駅徒歩圏で賃貸需要の厚い用地を選定</span>
 </div>
-<div class="vc-step">
-<div class="vc-node"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="#14202B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="4" width="18" height="24" rx="1.5"/><path d="M11 11h10M11 16h10M11 21h6"/></svg><span class="vc-no">02</span></div>
-<span class="vc-t">事業企画</span>
-<span class="vc-d">立地特性と入居者像から、住戸構成・賃料・収支を設計</span>
+<div style="background: #F5F6F7; padding: 28px 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #7A5B38">02</span>
+<span style="font-weight: 700; font-size: 15px">事業企画</span>
+<span style="font-size: 13px; color: #3D4752">立地特性と入居者像から、住戸構成・賃料・収支を設計</span>
 </div>
-<div class="vc-step">
-<div class="vc-node"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="#14202B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 28h22M8 28V10l8-5 8 5v18"/><path d="M12 14h3M17 14h3M12 19h3M17 19h3M14 28v-5h4v5"/></svg><span class="vc-no">03</span></div>
-<span class="vc-t">開発・建築</span>
-<span class="vc-d">鉄筋コンクリート造を基本に、品質とコストを管理</span>
+<div style="background: #F5F6F7; padding: 28px 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #7A5B38">03</span>
+<span style="font-weight: 700; font-size: 15px">開発・建築</span>
+<span style="font-size: 13px; color: #3D4752">鉄筋コンクリート造を基本に、品質とコストを管理</span>
 </div>
-<div class="vc-step">
-<div class="vc-node"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="#14202B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="6"/><path d="M16.5 16.5 27 27M22 22l3-3M19 19l3-3"/></svg><span class="vc-no">04</span></div>
-<span class="vc-t">リーシング</span>
-<span class="vc-d">住戸・テナントの募集から契約までを推進</span>
+<div style="background: #F5F6F7; padding: 28px 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #7A5B38">04</span>
+<span style="font-weight: 700; font-size: 15px">リーシング</span>
+<span style="font-size: 13px; color: #3D4752">住戸・テナントの募集から契約までを推進</span>
 </div>
-<div class="vc-step">
-<div class="vc-node"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="#14202B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15 16 5l12 10"/><path d="M8 13v14h16V13"/><path d="M13 27v-7h6v7"/></svg><span class="vc-no">05</span></div>
-<span class="vc-t">保有・運営管理</span>
-<span class="vc-d">自社保有のもと、長期視点でのメンテナンスと運営</span>
+<div style="background: #F5F6F7; padding: 28px 20px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #7A5B38">05</span>
+<span style="font-weight: 700; font-size: 15px">保有・運営管理</span>
+<span style="font-size: 13px; color: #3D4752">自社保有のもと、長期視点でのメンテナンスと運営</span>
 </div>
-<div class="vc-step">
-<div class="vc-node"><svg aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="#14202B" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 26h22"/><path d="M6 21l6-6 5 4 9-10"/><path d="M21 9h5v5"/></svg><span class="vc-no">06</span></div>
-<span class="vc-t">資産価値の向上</span>
-<span class="vc-d">ポートフォリオ全体での価値向上と次の開発への循環</span>
+<div style="background: #F5F6F7; padding: 28px 20px; display: flex; flex-direction: column; gap: 10px; border-top: 3px solid #7A5B38">
+<span style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #7A5B38">06</span>
+<span style="font-weight: 700; font-size: 15px">資産価値の向上</span>
+<span style="font-size: 13px; color: #3D4752">ポートフォリオ全体での価値最大化と再投資</span>
 </div>
 </div>
 </div>
