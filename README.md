@@ -3,6 +3,6 @@
 株式会社KOGA HOLDINGS コーポレートサイト（静的HTML）
 
 - 構成: index / company / business / projects / news / recruit / contact / privacy
-- フォーム: Netlify Forms（`contact.html` の `data-netlify`）。送信後は `thanks.html` へ遷移
-- 公開: Netlify または Cloudflare Pages にこのリポジトリを接続（ビルドコマンド不要、公開ディレクトリはルート）
-- 更新: HTMLを直接編集して `main` にプッシュすると自動デプロイ
+- フォーム: Google Apps Script のウェブアプリへ送信し、toru@kogahd.jp に通知メール。送信後は `thanks.html` へ遷移（送信先URLは `contact.html` の `data-endpoint`）
+- 公開: GitHub Pages（`main` ブランチのルート）。独自ドメインは `CNAME` ファイルで指定（www.kogahd.jp）
+- 更新: HTMLを直接編集して `main` にプッシュすると自動で公開（GitHub Pages）
