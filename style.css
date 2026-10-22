@@ -30,6 +30,7 @@ header.open .nav-toggle span:nth-child(3){transform:translateY(-7.5px) rotate(-4
   .ceo-col{flex-basis:200px!important;max-width:200px!important}
   .gal-item{flex-basis:132px!important}
   section,header>div{padding-left:20px!important;padding-right:20px!important}
+  .sec-tight{padding-top:56px!important;padding-bottom:56px!important}
 }
 
 /* ---- モーション ---- */
