@@ -14,9 +14,9 @@ jobs:
         run: |
           mkdir -p _candidates
           for id in 0n94KqRz6rQ -qTD1leeLCw ePC_72F8kGU d2hYqpR0YS0 mN6l37Didcc A1bMeaftZi4 aGgmKntVLJQ kPDXFvO6xqE O8IZNwzagm4 BYSLKyql9xA; do
-            curl -sSL --max-time 60 -A "Mozilla/5.0" -o "_candidates/${id}.jpg" "https://unsplash.com/photos/${id}/download?force=true&w=1800" || echo "fail $id"
+            curl -sSL --max-time 60 -A "curl/8.0" -o "_candidates/${id}.jpg" "https://unsplash.com/photos/${id}/download?force=true&w=1800" || echo "fail $id"
           done
-          ls -la _candidates
+          ls -la _candidates; file _candidates/* | head -20
       - name: Commit
         run: |
           git config user.name "github-actions"
