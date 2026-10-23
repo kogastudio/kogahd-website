@@ -10,13 +10,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Download candidates from Unsplash
+      - name: Collect candidates from Pexels
         run: |
-          mkdir -p _candidates
-          for id in 0n94KqRz6rQ -qTD1leeLCw ePC_72F8kGU d2hYqpR0YS0 mN6l37Didcc A1bMeaftZi4 aGgmKntVLJQ kPDXFvO6xqE O8IZNwzagm4 BYSLKyql9xA; do
-            curl -sSL --max-time 60 -A "curl/8.0" -o "_candidates/${id}.jpg" "https://unsplash.com/photos/${id}/download?force=true&w=1800" || echo "fail $id"
+          rm -rf _candidates; mkdir -p _candidates
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
+          for q in "modern%20apartment%20building%20exterior" "modern%20residential%20building%20facade" "minimal%20cafe%20interior%20concrete" "modern%20retail%20store%20interior"; do
+            tag=$(echo "$q" | tr -d '%20' | cut -c1-12)
+            curl -sSL -A "$UA" "https://www.pexels.com/search/${q}/" -o page.html || true
+            ids=$(grep -o '/photo/[a-z0-9-]*-[0-9]\{5,9\}/' page.html | grep -o '[0-9]\{5,9\}' | awk '!s[$0]++' | head -12)
+            echo "$tag: $ids"
+            n=0
+            for id in $ids; do
+              n=$((n+1))
+              curl -sSL -A "$UA" -o "_candidates/${tag}_${n}_${id}.jpg" "https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=900" || true
+            done
           done
-          ls -la _candidates; file _candidates/* | head -20
+          ls -la _candidates | head -60
       - name: Commit
         run: |
           git config user.name "github-actions"
