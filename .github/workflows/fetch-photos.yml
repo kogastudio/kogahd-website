@@ -1,0 +1,26 @@
+name: fetch-photos
+on:
+  workflow_dispatch:
+  push:
+    paths: [".github/workflows/fetch-photos.yml"]
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download candidates from Unsplash
+        run: |
+          mkdir -p _candidates
+          for id in 0n94KqRz6rQ -qTD1leeLCw ePC_72F8kGU d2hYqpR0YS0 mN6l37Didcc A1bMeaftZi4 aGgmKntVLJQ kPDXFvO6xqE O8IZNwzagm4 BYSLKyql9xA; do
+            curl -sSL --max-time 60 -A "Mozilla/5.0" -o "_candidates/${id}.jpg" "https://unsplash.com/photos/${id}/download?force=true&w=1800" || echo "fail $id"
+          done
+          ls -la _candidates
+      - name: Commit
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@users.noreply.github.com"
+          git add _candidates
+          git commit -m "chore: 写真候補を取得（一時）" || echo "nothing"
+          git push
