@@ -31,6 +31,7 @@ header.open .nav-toggle span:nth-child(3){transform:translateY(-7.5px) rotate(-4
   .gal-item{flex-basis:132px!important}
   section,header>div{padding-left:20px!important;padding-right:20px!important}
   .sec-tight{padding-top:56px!important;padding-bottom:56px!important}
+  .hero-cap{left:50%!important;right:auto!important;transform:translateX(-50%);width:max-content;max-width:calc(100% - 40px);white-space:normal!important;text-align:center;font-size:10px!important;bottom:14px!important}
 }
 
 /* ---- モーション ---- */
