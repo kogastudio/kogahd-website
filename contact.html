@@ -105,15 +105,21 @@
 <script>
 (function(){
 var f=document.getElementById('contact-form');if(!f)return;
-var b=document.getElementById('contact-submit');
+var b=document.getElementById('contact-submit');var t0=Date.now();
 f.addEventListener('submit',function(ev){
  ev.preventDefault();
  if(!f.reportValidity())return;
+ if(f.elements['bot-field'].value)return;
+ if(Date.now()-t0<5000){alert('入力内容をご確認のうえ、数秒おいてから再度送信してください。');return;}
+ var sig=['name','email','message'].map(function(n){return f.elements[n].value.trim();}).join('|');
+ try{var last=JSON.parse(localStorage.getItem('kh_last')||'null');
+  if(last&&last.s===sig&&Date.now()-last.t<600000){alert('同じ内容はすでに送信済みです。折り返しのご連絡をお待ちください。');return;}}catch(e){}
+ try{localStorage.setItem('kh_last',JSON.stringify({s:sig,t:Date.now()}));}catch(e){}
  var label=b.textContent;b.disabled=true;b.textContent='送信中…';
  var fd=new URLSearchParams(new FormData(f));
  fetch(f.getAttribute('data-endpoint'),{method:'POST',mode:'no-cors',body:fd})
   .then(function(){location.href='thanks.html';})
-  .catch(function(){b.disabled=false;b.textContent=label;alert('送信できませんでした。お手数ですが toru@kogahd.jp 宛に直接ご連絡ください。');});
+  .catch(function(){b.disabled=false;b.textContent=label;alert('送信できませんでした。お手数ですが、時間をおいて再度お試しください。');});
 });
 })();
 </script>
