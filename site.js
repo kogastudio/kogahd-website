@@ -16,7 +16,7 @@
     if(hero){
       var hi=hero.querySelector('img');if(hi)hi.classList.add('hero-img');
       var kids=hero.querySelectorAll('p,h1,h2,a');
-      kids.forEach(function(k,i){add(k,'up',300+i*180)});
+      kids.forEach(function(k,i){if(k.classList.contains('hero-cap')){add(k,'up',200);return}add(k,'up',300+i*180)});
     }
     // 各セクションの子要素を順に表示
     d.querySelectorAll('section').forEach(function(s){
